@@ -1,0 +1,541 @@
+:root {
+    --main-text-color: #f7f1e3;
+    --main-bg-color: #2f1a6a;
+    --media-bg-color: #353b48;
+    --navbar-color: #212529;
+    --alt-bg-color: black;
+    --rotate-duration: 60s;
+    --rotate-duration-faster: 15s;
+    --flicker-duration: 3s;
+    --float-duration: 6s;
+    --fog-duration: 20s;
+    --mask: linear-gradient(to bottom, #0000 0, #0000 5%, #000 40%, #0000 95%, #0000 0)100% 50%/100% 100% repeat-x
+}
+
+@font-face {
+    font-family: TheNextFont;
+    src: url(../fonts/TheNextFont.e8a67d7e.ttf)format("truetype")
+}
+
+body {
+    background-color: #000 !important;
+    font-family: Anek Malayalam, sans-serif !important
+}
+
+p {
+    color: var(--main-text-color);
+    font-size: 18px;
+    font-weight: lighter
+}
+
+h1 {
+    color: var(--main-text-color) !important
+}
+
+#loading-spinner {
+    background-color: var(--navbar-color);
+    width: 100%;
+    z-index: 500;
+    position: fixed
+}
+
+.social-links {
+    color: var(--main-text-color)
+}
+
+.heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    font-family: TheNextFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700
+}
+
+.sub-heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    padding-bottom: 10px;
+    font-family: TheNextFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700
+}
+
+#hero {
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden
+}
+
+.layer {
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute
+}
+
+.hero-container {
+    height: 100%;
+    width: auto;
+    z-index: 2;
+    position: relative
+}
+
+.hero-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    position: absolute;
+    top: 34px
+}
+
+.logo-layer {
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    margin: 0;
+    position: absolute;
+    top: 50px
+}
+
+.bottom-layer {
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    background-image: url(../images/bottom-layer-1.d55c5c52.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -1px
+}
+
+#content {
+    display: none
+}
+
+.content {
+    text-align: center
+}
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.section-fluid {
+    margin-top: 35px;
+    margin-bottom: 30px
+}
+
+.section-one {
+    background-image: url(../images/black-section-1.686bae71.png)
+}
+
+.section-alt {
+    background-color: var(--alt-bg-color)
+}
+
+#section-quotes,
+#section-welcome,
+#section-mint {
+    z-index: 0;
+    position: relative
+}
+
+#section-quotes:before {
+    content: " ";
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-image: url(../images/old-heroes.90a4c6ea.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#section-background {
+    z-index: 0;
+    position: relative;
+    overflow: hidden
+}
+
+#section-background:before {
+    content: " ";
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-image: url(../images/melthia-background.4c1cd0c4.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+#section-welcome:before {
+    content: " ";
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: .6;
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-image: url(../images/black-cat-background.36eb04ee.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.nav-item {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px
+}
+
+.separator {
+    width: 100%;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    overflow: hidden
+}
+
+#background-img-1 {
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-image: url(../images/melthia-background.4c1cd0c4.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    bottom: -1px
+}
+
+#mini-game-btn {
+    font-size: 12px
+}
+
+.custom-btn {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px
+}
+
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.animate-flicker {
+    -webkit-animation: flickerAnimation var(--flicker-duration)infinite;
+    -moz-animation: flickerAnimation var(--flicker-duration)infinite;
+    -o-animation: flickerAnimation var(--flicker-duration)infinite;
+    animation: flickerAnimation var(--flicker-duration)infinite
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-20px)
+    }
+    to {
+        transform: translateY(0)
+    }
+}
+
+.animate-float {
+    -webkit-animation: float var(--float-duration)ease-in-out infinite;
+    -moz-animation: float var(--float-duration)ease-in-out infinite;
+    animation: float var(--float-duration)ease-in-out infinite
+}
+
+.animate-rotate {
+    -webkit-animation: spin var(--rotate-duration)linear infinite;
+    -moz-animation: spin var(--rotate-duration)linear infinite;
+    animation: spin var(--rotate-duration)linear infinite
+}
+
+.animate-rotate-reverse {
+    -webkit-animation: spin-reverse var(--rotate-duration)linear infinite;
+    -moz-animation: spin-reverse var(--rotate-duration)linear infinite;
+    animation: spin-reverse var(--rotate-duration)linear infinite
+}
+
+.animate-rotate-faster {
+    -webkit-animation: spin var(--rotate-duration-faster)linear infinite;
+    -moz-animation: spin var(--rotate-duration-faster)linear infinite;
+    animation: spin var(--rotate-duration-faster)linear infinite
+}
+
+@-moz-keyframes spin {
+    to {
+        -moz-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@-moz-keyframes spin-reverse {
+    to {
+        -moz-transform: rotate(-360deg)
+    }
+}
+
+@-webkit-keyframes spin-reverse {
+    to {
+        -webkit-transform: rotate(-360deg)
+    }
+}
+
+@keyframes spin-reverse {
+    to {
+        transform: rotate(-360deg)
+    }
+}
+
+@media only screen and (width<=768px) {
+    .animate-rotate {
+        animation: spin !important
+    }
+    .animate-rotate-reverse {
+        animation: spin-reverse !important
+    }
+}
+
+.highlight-on-hover {
+    transition: transform .5s
+}
+
+.highlight-on-hover:hover {
+    transform: scale(1.1)
+}
+
+.video-wrapper {
+    height: 0;
+    outline: 3px solid #fff;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.features-container {
+    margin-right: 0 !important;
+    padding-right: 0 !important
+}
+
+.features-img {
+    outline: 3px solid #fff;
+    margin: 3px
+}
+
+.features-item {
+    z-index: 300
+}
+
+#features-carousel .owl-stage {
+    left: -100px
+}
+
+#features-carousel p {
+    text-transform: uppercase
+}
+
+.hero-img-color,
+.hero-img-bw {
+    width: 100%
+}
+
+.hero-img-color {
+    display: none
+}
+
+.heroes-imgs:hover {
+    cursor: pointer
+}
+
+.heroes-imgs-inner {
+    pointer-events: none
+}
+
+.hero-fullbody-img {
+    width: 250px;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    transform: translateY(-250px)
+}
+
+.hero-fullbody-imgs {
+    pointer-events: none
+}
+
+.owl-nav {
+    color: #fff;
+    font-size: 40px
+}
+
+.video-container {
+    height: 100%;
+    width: auto;
+    z-index: 2;
+    position: relative
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: absolute
+}
+
+.media-section {
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+
+.media-bg {
+    background-color: var(--media-bg-color)
+}
+
+.media-bg p {
+    color: #fff
+}
+
+.media-card p {
+    color: #0c0c0d
+}
+
+.media-bg-inner {
+    background-color: var(--media-bg-color);
+    opacity: 1;
+    padding-top: 100px
+}
+
+.media-header {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: TheNextFont, sans-serif;
+    font-size: 30px;
+    font-weight: 800
+}
+
+.media-sub-header {
+    color: #fff
+}
+
+.media-section .btn {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff
+}
+
+.media-section a {
+    color: inherit
+}
+
+.media-section .video-wrapper {
+    outline: inherit
+}
+
+#img-modal .modal-dialog {
+    min-width: 90%;
+    background-color: #0000
+}
+
+.media-screenshot-link .img-fluid:hover {
+    transition: transform .5s;
+    transform: scale(1.1)
+}
+
+#mint-btn-polygon,
+#mint-btn-avalanche {
+    display: none
+}
+
+.flipped {
+    -khtml-transform: scale(-1, 1);
+    transform: scaleX(-1)
+}
+
+#section-mint:before {
+    content: " ";
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    background-image: url(../images/mint-background.3bc5d737.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+/*# sourceMappingURL=beta-pass-claim.03fcb964.css.map */
